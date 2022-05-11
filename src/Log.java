@@ -13,6 +13,9 @@ import java.awt.Color;
 import java.awt.SystemColor;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import javax.swing.SwingConstants;
+import javax.swing.border.BevelBorder;
+import javax.swing.border.EtchedBorder;
 
 public class Log extends JFrame {
 
@@ -43,7 +46,9 @@ public class Log extends JFrame {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 529, 411);
 		contentPane = new JPanel();
-		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+		contentPane.setBackground(SystemColor.activeCaption);
+		contentPane.setForeground(Color.DARK_GRAY);
+		contentPane.setBorder(null);
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
@@ -74,6 +79,7 @@ public class Log extends JFrame {
 		contentPane.add(password);
 		
 		JButton btnNewButton = new JButton("로그인");
+		btnNewButton.setBackground(SystemColor.activeCaption);
 		btnNewButton.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mousePressed(MouseEvent e) {
@@ -86,9 +92,10 @@ public class Log extends JFrame {
 		contentPane.add(btnNewButton);
 		
 		JLabel lblNewLabel = new JLabel("급여/사원 관리 시스템");
+		lblNewLabel.setHorizontalAlignment(SwingConstants.LEFT);
 		lblNewLabel.setForeground(Color.BLACK);
 		lblNewLabel.setFont(new Font("맑은 고딕", Font.BOLD, 16));
-		lblNewLabel.setBounds(176, 10, 189, 62);
+		lblNewLabel.setBounds(156, 10, 189, 62);
 		contentPane.add(lblNewLabel);
 	}
 }
