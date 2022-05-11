@@ -16,6 +16,7 @@ import javax.swing.border.LineBorder;
 import java.awt.Font;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.awt.SystemColor;
 
 public class Main1 extends JFrame {
 
@@ -45,15 +46,16 @@ public class Main1 extends JFrame {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 1049, 803);
 		contentPane = new JPanel();
+		contentPane.setBackground(SystemColor.activeCaption);
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
 		tab1 = new JTabbedPane(JTabbedPane.LEFT);
+		tab1.setBorder(null);
 		
 		tab1.setFont(new Font("Arial Black", Font.BOLD, 12));
 		tab1.setTabLayoutPolicy(JTabbedPane.SCROLL_TAB_LAYOUT);
-		tab1.setBorder(new LineBorder(new Color(0, 0, 0)));
 		tab1.setToolTipText("");
 		tab1.setBounds(22, 67, 988, 595);
 		contentPane.add(tab1);
@@ -61,12 +63,6 @@ public class Main1 extends JFrame {
 		Panel panel2 = new Panel();
 		tab1.addTab("Member", null, panel2, "");
 		panel2.setLayout(null);
-		
-		Panel panel = new Panel();
-		panel.setBackground(Color.GRAY);
-		panel.setBounds(58, 0, 301, 588);
-		panel2.add(panel);
-		panel.setLayout(null);
 		
 		JButton btnNewButton = new JButton("로그인 화면 열기");
 		btnNewButton.addMouseListener(new MouseAdapter() {
@@ -103,10 +99,13 @@ public class Main1 extends JFrame {
 		Panel panel5 = new Panel();
 		tab1.addTab("management", null, panel5, null);
 		
+		Panel panel6 = new Panel();
+		tab1.addTab("Search", null, panel6, null);
+		
 		JLabel lblNewLabel = new JLabel("급여/사원 관리 시스템");
 		lblNewLabel.setForeground(Color.BLACK);
 		lblNewLabel.setFont(new Font("맑은 고딕", Font.BOLD, 16));
-		lblNewLabel.setBounds(23, 10, 189, 62);
+		lblNewLabel.setBounds(22, 10, 189, 62);
 		contentPane.add(lblNewLabel);
 	}
 }
